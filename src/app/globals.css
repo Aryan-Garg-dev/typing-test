@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Special+Gothic+Expanded+One&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --color-accent-blue: #102E50;
+    --color-accent-yellow: #F5C45E;
+    --color-accent-orange: #E78B48;
+    --color-accent-red: #E78B48;
+    --color-accent-light: #D4C9BE;
+    --color-accent-green: #5F8B4C;
+
+    --color-dark: #030303;
+    --color-light: #F1EFEC;
+
+    --font-mono: "Space Grotesk", sans-serif;
+    --font-typing: "Special Gothic Expanded One", sans-serif;
+}
+
+
+body {
+    @apply text-accent-light bg-[#1f1f1f]
+}
