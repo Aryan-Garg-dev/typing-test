@@ -159,7 +159,7 @@ const HomePage = () => {
             <Timer counter={game.counter} />
             <Select options={timeLimitOptions} selectedOption={timeLimit} select={handleSelectTimeLimit} label={"Set time limit"} />
           </div>
-          <div className={"flex items-center font-typing opacity-50 tracking-wide text-lg"}>Press <span className={"text-accent-red mx-1.5 cursor-pointer"} onClick={handleOnClickStartGame} title={"Click to start"}>Enter</span> to start</div>
+          {!game.isRunning && <div className={"flex items-center font-typing opacity-50 tracking-wide text-lg"}>Press <span className={"text-accent-red mx-1.5 cursor-pointer"} onClick={handleOnClickStartGame} title={"Click to start"}>Enter</span> to start</div>}
           <div>
             <Select options={wordLenthOptions} selectedOption={wordLength} select={handleSelectWordLength} label={"Set word limit"} />
           </div>
