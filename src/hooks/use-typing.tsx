@@ -109,7 +109,7 @@ const useTyping: IUseTyping = () => {
     let incorrect = 0, correct = 0, words = game.currentPos.word;
     const total = game.text.length;
     if (game.currentPos.word != 0 && game.currentPos.letter < game.data[game.currentPos.word].length - 1) words -= 1;
-    const wpm = Math.round((words / game.counter)* 60);
+    const wpm = Math.round((words / game.counter)* 60) || 0;
     for (const word of game.data){
       for (const letter of word){
         if (letter.status === "correct") correct += 1;
