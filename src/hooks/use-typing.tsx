@@ -108,7 +108,7 @@ const useTyping: IUseTyping = () => {
     if (!isReady) return;
     let incorrect = 0, correct = 0, words = game.currentPos.word;
     const total = game.text.length;
-    if (game.currentPos.letter < game.data[game.currentPos.word].length - 1) words -= 1;
+    if (game.currentPos.word != 0 && game.currentPos.letter < game.data[game.currentPos.word].length - 1) words -= 1;
     const wpm = Math.round((words / game.counter)* 60);
     for (const word of game.data){
       for (const letter of word){
@@ -177,6 +177,16 @@ const useTyping: IUseTyping = () => {
 
   const handleKeyDown = useCallback((e: KeyboardEvent)=>{
     let { word: wordOffset, letter: letterOffset } = game.currentPos;
+
+    if (e.key == "Escape"){
+      if (game.isRunning && !game.isOver){
+        setGame(game=>({
+          ...game,
+          isOver: true,
+          isRunning: false,
+        }))
+      }
+    }
 
     if (e.key === "Backspace"){
       if (letterOffset == 0) {
