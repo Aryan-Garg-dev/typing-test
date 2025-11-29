@@ -13,6 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        defer
+        data-website-id="dfid_zrMrf9T9nmZuiqBFW8t93"
+        data-domain="typing.aryangarg.dev"
+        data-allow-localhost="true"
+        src="https://datafa.st/js/script.js">
+      </script>
       <body
         className={`antialiased`}
         suppressHydrationWarning
